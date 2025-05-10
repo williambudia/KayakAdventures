@@ -5,6 +5,7 @@ import FAQ from './components/FAQ';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
+import { User, Users, Briefcase, Check, MapPin, Shield, Award } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
 async function getFeaturedPackages() {
@@ -44,22 +45,14 @@ export default async function Home() {
               title="Passeios Individuais"
               description="Explore o rio no seu próprio ritmo, com equipamentos de qualidade e instruções de segurança."
               bgColorClass="bg-primary-100"
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              }
+              icon={<User size={24} className="text-primary" />}
             />
             
             <FeatureCard 
               title="Passeios em Grupo"
               description="Reúna amigos e familiares para uma aventura compartilhada com descontos especiais para grupos."
               bgColorClass="bg-secondary-100"
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              }
+              icon={<Users size={24} className="text-secondary" />}
             />
             
             <FeatureCard 

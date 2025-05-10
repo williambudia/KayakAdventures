@@ -1,3 +1,6 @@
 {
+  "/api/pacotes/[id]/route": "/api/pacotes/[id]",
+  "/api/pacotes/route": "/api/pacotes",
+  "/_not-found/page": "/_not-found",
   "/page": "/"
 }

@@ -1,28 +1,23 @@
 'use client';
 
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { motion } from 'framer-motion';
+import { Card, CardContent } from '../../components/ui/card';
 
-export default function FeatureCard({ title, description, icon, bgColorClass }) {
+export default function FeatureCard({ title, description, icon, bgColorClass = "bg-primary-100" }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
+      transition={{ duration: 0.2 }}
     >
-      <Card className="h-full overflow-hidden">
-        <CardHeader className="pb-2">
-          <div className={`rounded-full ${bgColorClass || 'bg-primary-100'} w-16 h-16 flex items-center justify-center mx-auto mb-4`}>
+      <Card className="overflow-hidden h-full border-none shadow-sm hover:shadow-md transition-all duration-300">
+        <CardContent className="p-6">
+          <div className={`rounded-full ${bgColorClass} w-14 h-14 flex items-center justify-center mx-auto mb-4`}>
             {icon}
           </div>
-          <CardTitle className="text-xl font-bold text-center text-primary mb-2 font-montserrat">
-            {title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-muted-foreground">
+          
+          <h3 className="text-xl font-semibold text-center text-primary mb-3 font-montserrat">{title}</h3>
+          
+          <p className="text-muted-foreground text-center font-opensans">
             {description}
           </p>
         </CardContent>
