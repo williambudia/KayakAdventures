@@ -3,6 +3,7 @@ import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import { Providers } from './providers';
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -34,12 +35,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${montserrat.variable} ${openSans.variable}`}>
       <body className="min-h-screen flex flex-col font-opensans bg-background">
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <WhatsAppButton />
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <WhatsAppButton />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

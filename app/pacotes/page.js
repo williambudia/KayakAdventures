@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import PackageCard from '../components/PackageCard';
+import PackageCardV2 from '../components/PackageCardV2';
+import { Button } from '../../components/ui/button';
 
 async function getPackages() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/pacotes`, { 
@@ -82,7 +83,7 @@ export default async function PackagesPage() {
           <Suspense fallback={<p className="text-center col-span-3">Carregando pacotes...</p>}>
             {packages && packages.length > 0 ? (
               packages.map(pkg => (
-                <PackageCard key={pkg.id} package={pkg} />
+                <PackageCardV2 key={pkg.id} package={pkg} />
               ))
             ) : (
               <div className="col-span-3 text-center py-12">
@@ -107,17 +108,21 @@ export default async function PackagesPage() {
               Não encontrou o pacote ideal para você? Entre em contato conosco para criar um passeio personalizado
               que atenda às suas necessidades específicas.
             </p>
-            <a 
-              href={`https://wa.me/5566999999999?text=${encodeURIComponent('Olá! Gostaria de informações sobre pacotes personalizados de passeios de caiaque.')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center"
+            <Button
+              asChild
+              className="inline-flex items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              Solicitar Orçamento
-            </a>
+              <a 
+                href={`https://wa.me/5566999999999?text=${encodeURIComponent('Olá! Gostaria de informações sobre pacotes personalizados de passeios de caiaque.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Solicitar Orçamento
+              </a>
+            </Button>
           </div>
         </div>
       </section>

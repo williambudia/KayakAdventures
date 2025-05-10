@@ -1,3 +1,219 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 200 83% 24%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 187 100% 42%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 42 100% 69%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 200 83% 24%;
+    
+    --radius: 0.5rem;
+    
+    /* Legacy variables */
+    --primary-color: #0B4F6C; /* Azul petróleo */
+    --secondary-color: #00C2D1; /* Ciano vibrante */
+    --background-color: #F8F9FA; /* Branco suave */
+    --text-color: #1f2937; /* Cinza escuro */
+    --accent-color: #FFD166; /* Amarelo dourado */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-primary-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-secondary-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-secondary-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-primary-900 font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-accent-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-accent-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-montserrat font-semibold py-2 px-6 rounded-md
+    hover:bg-primary hover:text-white transition-all duration-300 focus:outline-none 
+    focus:ring-2 focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300
+    hover:-translate-y-1 border border-gray-100;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .heading-1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat text-primary;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl font-bold font-montserrat text-primary mb-6;
+  }
+  
+  .heading-3 {
+    @apply text-2xl font-bold font-montserrat text-secondary mb-4;
+  }
+  
+  .heading-accent {
+    @apply text-3xl sm:text-4xl font-bold font-montserrat text-accent mb-6;
+  }
+}
+
+/* Hero video background */
+.hero-container {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 79, 108, 0.7),
+    rgba(0, 194, 209, 0.4)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Gallery lightbox animations */
+.lightbox-enter {
+  opacity: 0;
+}
+
+.lightbox-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.lightbox-exit {
+  opacity: 1;
+}
+
+.lightbox-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Floating WhatsApp button animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-btn {
+  animation: pulse 2s infinite;
+}
+
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.js","import":"Montserrat","arguments":[{"subsets":["latin"],"variable":"--font-montserrat","display":"swap"}],"variableName":"montserrat"} ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -155,157 +371,5 @@
 }@font-face {font-family: 'Open Sans Fallback';src: local("Arial");ascent-override: 101.65%;descent-override: 27.86%;line-gap-override: 0.00%;size-adjust: 105.15%
 }.__className_9c011f {font-family: 'Open Sans', 'Open Sans Fallback';font-style: normal
 }.__variable_9c011f {--font-opensans: 'Open Sans', 'Open Sans Fallback'
-}
-
-/*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/globals.css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --primary: #0B4F6C; /* Azul petróleo */
-  --secondary: #00C2D1; /* Ciano vibrante */
-  --background: #F8F9FA; /* Branco suave */
-  --text: #1f2937; /* Cinza escuro */
-  --accent: #FFD166; /* Amarelo dourado */
-}
-
-body {
-  color: var(--text);
-  background: var(--background);
-}
-
-@layer components {
-  .btn-primary {
-    @apply bg-primary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-primary-600 
-    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
-    focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-secondary-600 
-    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
-    focus:ring-secondary-400 focus:ring-opacity-50 hover:scale-105;
-  }
-  
-  .btn-accent {
-    @apply bg-accent text-primary-900 font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-accent-600 
-    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
-    focus:ring-accent-400 focus:ring-opacity-50 hover:scale-105;
-  }
-  
-  .btn-outline {
-    @apply border-2 border-primary text-primary font-montserrat font-semibold py-2 px-6 rounded-md
-    hover:bg-primary hover:text-white transition-all duration-300 focus:outline-none 
-    focus:ring-2 focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
-  }
-  
-  .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300
-    hover:-translate-y-1 border border-gray-100;
-  }
-  
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  
-  .section {
-    @apply py-12 md:py-16;
-  }
-  
-  .heading-1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat text-primary;
-  }
-  
-  .heading-2 {
-    @apply text-3xl sm:text-4xl font-bold font-montserrat text-primary mb-6;
-  }
-  
-  .heading-3 {
-    @apply text-2xl font-bold font-montserrat text-secondary mb-4;
-  }
-  
-  .heading-accent {
-    @apply text-3xl sm:text-4xl font-bold font-montserrat text-accent mb-6;
-  }
-}
-
-/* Hero video background */
-.hero-container {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 79, 108, 0.7),
-    rgba(0, 194, 209, 0.4)
-  );
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-/* Gallery lightbox animations */
-.lightbox-enter {
-  opacity: 0;
-}
-
-.lightbox-enter-active {
-  opacity: 1;
-  transition: opacity 300ms;
-}
-
-.lightbox-exit {
-  opacity: 1;
-}
-
-.lightbox-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
-}
-
-/* Floating WhatsApp button animation */
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
-}
-
-.whatsapp-btn {
-  animation: pulse 2s infinite;
 }
 

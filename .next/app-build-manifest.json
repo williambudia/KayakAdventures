@@ -16,6 +16,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/pacotes/route.js"
     ],
+    "/pacotes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pacotes/page.js"
+    ],
     "/api/pacotes/[id]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
