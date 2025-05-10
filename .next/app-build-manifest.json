@@ -11,15 +11,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/api/pacotes/[id]/route": [
+    "/pacotes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/pacotes/[id]/route.js"
+      "static/chunks/app/pacotes/page.js"
     ],
     "/api/pacotes/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/pacotes/route.js"
+    ],
+    "/api/pacotes/[id]/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/pacotes/[id]/route.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

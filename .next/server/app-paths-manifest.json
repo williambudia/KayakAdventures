@@ -1,6 +1,7 @@
 {
-  "/api/pacotes/[id]/route": "app/api/pacotes/[id]/route.js",
   "/api/pacotes/route": "app/api/pacotes/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js"
+  "/api/pacotes/[id]/route": "app/api/pacotes/[id]/route.js",
+  "/page": "app/page.js",
+  "/pacotes/page": "app/pacotes/page.js"
 }
