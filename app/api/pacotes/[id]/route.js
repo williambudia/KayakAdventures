@@ -4,9 +4,12 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../../../../lib/auth';
 
 // GET - Retorna um pacote específico pelo ID
-export async function GET(request, { params }) {
+export async function GET(request, context) {
   try {
+    // Obter os parâmetros de forma assíncrona para evitar o erro
+    const params = await Promise.resolve(context.params);
     const id = params.id;
+    
     const pacote = await prisma.pacote.findUnique({
       where: {
         id
@@ -31,7 +34,7 @@ export async function GET(request, { params }) {
 }
 
 // PATCH - Atualiza um pacote existente (requer autenticação)
-export async function PATCH(request, { params }) {
+export async function PATCH(request, context) {
   try {
     const session = await getServerSession(authOptions);
     
@@ -43,7 +46,10 @@ export async function PATCH(request, { params }) {
     }
     
     const data = await request.json();
-    const id = params.id;
+    
+    // Extrair params após await para evitar o erro de dynamic API
+    const { params } = context;
+    const id = params?.id;
     
     // Verificar se o pacote existe
     const existingPacote = await prisma.pacote.findUnique({
@@ -62,7 +68,7 @@ export async function PATCH(request, { params }) {
     // Atualizar o pacote
     const updatedPacote = await prisma.pacote.update({
       where: {
-        id: params.id
+        id
       },
       data: {
         nome: data.nome !== undefined ? data.nome : existingPacote.nome,
@@ -87,7 +93,7 @@ export async function PATCH(request, { params }) {
 }
 
 // DELETE - Remove um pacote (requer autenticação)
-export async function DELETE(request, { params }) {
+export async function DELETE(request, context) {
   try {
     const session = await getServerSession(authOptions);
     
@@ -98,7 +104,9 @@ export async function DELETE(request, { params }) {
       );
     }
     
-    const id = params.id;
+    // Extrair params após await para evitar o erro de dynamic API
+    const { params } = context;
+    const id = params?.id;
     
     // Verificar se o pacote existe
     const existingPacote = await prisma.pacote.findUnique({
