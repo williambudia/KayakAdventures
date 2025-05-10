@@ -11,11 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/pacotes/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/pacotes/page.js"
-    ],
     "/api/pacotes/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

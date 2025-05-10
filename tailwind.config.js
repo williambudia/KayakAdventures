@@ -2,12 +2,27 @@
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        
         primary: {
           DEFAULT: '#0B4F6C',  // azul petróleo (primária)
+          foreground: "hsl(var(--primary-foreground))",
           50: '#E6F0F5',
           100: '#CCE0EB',
           200: '#99C1D7',
@@ -21,6 +36,7 @@ module.exports = {
         },
         secondary: {
           DEFAULT: '#00C2D1',  // ciano vibrante (secundária)
+          foreground: "hsl(var(--secondary-foreground))",
           50: '#E6FAFC',
           100: '#CCF5F8',
           200: '#99EBF1',
@@ -34,6 +50,7 @@ module.exports = {
         },
         accent: {
           DEFAULT: '#FFD166',  // amarelo dourado (destaque)
+          foreground: "#0B4F6C",
           50: '#FFF9E6',
           100: '#FFF3CC',
           200: '#FFE799',
@@ -45,7 +62,22 @@ module.exports = {
           800: '#665429',
           900: '#332A14',
         },
-        background: '#F8F9FA',  // branco suave (fundo)
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
       },
       fontFamily: {
         montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
@@ -53,12 +85,27 @@ module.exports = {
       },
       animation: {
         'soft-bounce': 'soft-bounce 1.5s infinite',
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         'soft-bounce': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
