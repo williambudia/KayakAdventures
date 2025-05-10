@@ -59,11 +59,7 @@ export default async function Home() {
               title="Eventos Corporativos"
               description="Proporcione uma experiência única de team building para sua equipe, com pacotes personalizados."
               bgColorClass="bg-accent-100"
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-accent-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              }
+              icon={<Briefcase size={24} className="text-accent-foreground" />}
             />
           </div>
           
@@ -108,35 +104,29 @@ export default async function Home() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Check className="h-6 w-6 text-primary mr-2 flex-shrink-0" strokeWidth={2.5} />
                   <span>Equipamentos de alta qualidade e segurança</span>
                 </li>
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Check className="h-6 w-6 text-primary mr-2 flex-shrink-0" strokeWidth={2.5} />
                   <span>Guias experientes e certificados</span>
                 </li>
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Check className="h-6 w-6 text-primary mr-2 flex-shrink-0" strokeWidth={2.5} />
                   <span>Rotas adaptadas para diferentes níveis de experiência</span>
                 </li>
                 <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Check className="h-6 w-6 text-primary mr-2 flex-shrink-0" strokeWidth={2.5} />
                   <span>Kit de primeiros socorros e treinamento básico incluso</span>
                 </li>
               </ul>
               
               <div className="mt-8">
-                <Link href="/galeria" className="btn-secondary inline-block">
-                  Ver Nossa Galeria
-                </Link>
+                <Button asChild variant="outline" size="lg" className="shadow-sm">
+                  <Link href="/galeria">
+                    Ver Nossa Galeria
+                  </Link>
+                </Button>
               </div>
             </div>
             
@@ -162,9 +152,11 @@ export default async function Home() {
               Reserve seu passeio de caiaque agora e descubra as maravilhas do Rio Teles Pires.
               Temos pacotes para todos os gostos e níveis de experiência.
             </p>
-            <Link href="/pacotes" className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-md hover:bg-blue-50 transition-colors duration-200 shadow-md inline-block">
-              Reservar Meu Passeio
-            </Link>
+            <Button asChild size="lg" variant="default" className="bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-700 border-none shadow-md">
+              <Link href="/pacotes">
+                Reservar Meu Passeio
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
