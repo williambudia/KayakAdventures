@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Hero({ title, subtitle, ctaText, ctaLink, videoSrc }) {
   return (
@@ -17,24 +20,61 @@ export default function Hero({ title, subtitle, ctaText, ctaLink, videoSrc }) {
         {/* Using a static image as fallback */}
       </video>
       
-      {/* Dark Overlay */}
-      <div className="hero-overlay"></div>
+      {/* Gradient Overlay conforme design notes */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-secondary/40"></div>
       
       {/* Hero Content */}
       <div className="hero-content">
         <div className="container-custom text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
-            {title}
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto">
-            {subtitle}
-          </p>
-          <Link 
-            href={ctaLink} 
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md text-lg shadow-lg transition-colors duration-300"
+          <motion.h1 
+            className="text-5xl md:text-6xl font-bold mb-6 text-white font-montserrat"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {ctaText}
-          </Link>
+            {title}
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-opensans"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {subtitle}
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            className="inline-block"
+          >
+            <motion.div
+              animate={{ 
+                boxShadow: [
+                  "0 0 0 0 rgba(255, 209, 102, 0.7)",
+                  "0 0 0 12px rgba(255, 209, 102, 0)",
+                  "0 0 0 0 rgba(255, 209, 102, 0)"
+                ] 
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                repeatType: "loop"
+              }}
+              className="inline-block"
+            >
+              <Link 
+                href={ctaLink} 
+                className="bg-accent hover:bg-accent-600 text-primary-900 font-bold py-3 px-8 rounded-md text-lg 
+                shadow-lg transition-all duration-300 inline-block font-montserrat"
+              >
+                {ctaText}
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
