@@ -134,9 +134,9 @@ export default async function Home() {
               <Image 
                 src="https://pixabay.com/get/ge8a2b0c5d961eed554c21a1ce57a7bb5a6e340d184f62fdf3a98835aa716aff06bf3e217170c609399588c35399a7206bde56c2c9cb786bc9506fdcb66477001_1280.jpg"
                 alt="Passeio de caiaque no Rio Teles Pires"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                style={{objectFit: 'cover'}}
+                width={800}
+                height={600}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 className="rounded-lg"
               />
             </div>

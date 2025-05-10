@@ -3,25 +3,15 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function Hero({ title, subtitle, ctaText, ctaLink, videoSrc }) {
+export default function Hero({ title, subtitle, ctaText, ctaLink }) {
   return (
-    <div className="hero-container">
-      {/* Video Background - This would ideally be a video of the Rio Teles Pires */}
-      <video 
-        className="hero-video"
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        poster="https://pixabay.com/get/ge8a2b0c5d961eed554c21a1ce57a7bb5a6e340d184f62fdf3a98835aa716aff06bf3e217170c609399588c35399a7206bde56c2c9cb786bc9506fdcb66477001_1280.jpg"
-      >
-        {/* Fallback to an image if video isn't available */}
-        <source src={videoSrc} type="video/mp4" />
-        {/* Using a static image as fallback */}
-      </video>
-      
-      {/* Gradient Overlay conforme design notes */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-secondary/40"></div>
+    <div className="hero-container relative h-[70vh] min-h-[500px] overflow-hidden bg-cover bg-center" 
+      style={{ 
+        backgroundImage: `url('https://pixabay.com/get/ge8a2b0c5d961eed554c21a1ce57a7bb5a6e340d184f62fdf3a98835aa716aff06bf3e217170c609399588c35399a7206bde56c2c9cb786bc9506fdcb66477001_1280.jpg')` 
+      }}
+    >
+      {/* Gradient Overlay com gradiente com opacidade */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-secondary/50"></div>
       
       {/* Hero Content */}
       <div className="hero-content">

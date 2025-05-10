@@ -9,12 +9,14 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-opensans',
   display: 'swap',
+  weight: ['400', '500', '600'],
 });
 
 export const metadata = {

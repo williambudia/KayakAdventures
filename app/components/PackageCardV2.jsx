@@ -62,19 +62,16 @@ export default function PackageCardV2({ package: initialPackage }) {
     >
       <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
         <div className="relative h-56 w-full overflow-hidden">
-          <div className="relative h-full w-full" style={{ position: 'relative' }}>
+          <div className="relative h-full w-full">
             <Image
               src={package_data.imagemUrl || "https://pixabay.com/get/ge8a2b0c5d961eed554c21a1ce57a7bb5a6e340d184f62fdf3a98835aa716aff06bf3e217170c609399588c35399a7206bde56c2c9cb786bc9506fdcb66477001_1280.jpg"}
               alt={package_data.nome}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ 
-                objectFit: 'cover',
-                transition: 'transform 0.5s ease'
-              }}
-              className={`rounded-t-lg ${isHovering ? 'scale-105' : 'scale-100'} transition-transform duration-500`}
+              className={`rounded-t-lg object-cover ${isHovering ? 'scale-105' : 'scale-100'} transition-transform duration-500`}
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
+              width={400}
+              height={225}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
           {package_data.destaque && (
