@@ -179,19 +179,32 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 
-    transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 
-    focus:ring-blue-500 focus:ring-opacity-50;
+    @apply bg-primary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-primary-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
   }
   
   .btn-secondary {
-    @apply bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-700 
-    transition-colors duration-200 shadow-md focus:outline-none focus:ring-2 
-    focus:ring-green-500 focus:ring-opacity-50;
+    @apply bg-secondary text-white font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-secondary-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-secondary-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-primary-900 font-montserrat font-semibold py-2 px-6 rounded-md hover:bg-accent-600 
+    transition-all duration-300 shadow-md focus:outline-none focus:ring-2 
+    focus:ring-accent-400 focus:ring-opacity-50 hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-montserrat font-semibold py-2 px-6 rounded-md
+    hover:bg-primary hover:text-white transition-all duration-300 focus:outline-none 
+    focus:ring-2 focus:ring-primary-400 focus:ring-opacity-50 hover:scale-105;
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200;
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300
+    hover:-translate-y-1 border border-gray-100;
   }
   
   .container-custom {
@@ -203,15 +216,19 @@ body {
   }
   
   .heading-1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-bold text-blue-700;
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat text-primary;
   }
   
   .heading-2 {
-    @apply text-3xl sm:text-4xl font-bold text-blue-600 mb-6;
+    @apply text-3xl sm:text-4xl font-bold font-montserrat text-primary mb-6;
   }
   
   .heading-3 {
-    @apply text-2xl font-bold text-green-600 mb-4;
+    @apply text-2xl font-bold font-montserrat text-secondary mb-4;
+  }
+  
+  .heading-accent {
+    @apply text-3xl sm:text-4xl font-bold font-montserrat text-accent mb-6;
   }
 }
 
