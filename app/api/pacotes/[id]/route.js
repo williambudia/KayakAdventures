@@ -6,9 +6,10 @@ import { authOptions } from '../../../../lib/auth';
 // GET - Retorna um pacote específico pelo ID
 export async function GET(request, { params }) {
   try {
+    const id = params.id;
     const pacote = await prisma.pacote.findUnique({
       where: {
-        id: params.id
+        id
       }
     });
     
@@ -42,11 +43,12 @@ export async function PATCH(request, { params }) {
     }
     
     const data = await request.json();
+    const id = params.id;
     
     // Verificar se o pacote existe
     const existingPacote = await prisma.pacote.findUnique({
       where: {
-        id: params.id
+        id
       }
     });
     
@@ -96,10 +98,12 @@ export async function DELETE(request, { params }) {
       );
     }
     
+    const id = params.id;
+    
     // Verificar se o pacote existe
     const existingPacote = await prisma.pacote.findUnique({
       where: {
-        id: params.id
+        id
       }
     });
     
@@ -113,7 +117,7 @@ export async function DELETE(request, { params }) {
     // Excluir o pacote
     await prisma.pacote.delete({
       where: {
-        id: params.id
+        id
       }
     });
     

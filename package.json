@@ -14,11 +14,14 @@
   "description": "",
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@next/font": "^14.2.15",
     "@prisma/client": "^6.7.0",
     "autoprefixer": "^10.4.21",
     "bcrypt": "^5.1.1",
     "eslint": "^9.26.0",
     "eslint-config-next": "^15.3.2",
+    "framer-motion": "^12.10.5",
+    "lucide-react": "^0.509.0",
     "next": "^15.3.2",
     "next-auth": "^4.24.11",
     "postcss": "^8.5.3",
@@ -26,6 +29,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "swr": "^2.3.3",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.6",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

@@ -1,10 +1,20 @@
-import { Inter } from 'next/font/google';
+import { Montserrat, Open_Sans } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
-const inter = Inter({ subsets: ['latin'] });
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-opensans',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Rumos & Remos | Passeios de Caiaque em Sorriso/MT',
@@ -22,8 +32,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+    <html lang="pt-BR" className={`${montserrat.variable} ${openSans.variable}`}>
+      <body className="min-h-screen flex flex-col font-opensans bg-background">
         <Header />
         <main className="flex-grow">
           {children}
